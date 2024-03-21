@@ -1,8 +1,6 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
-
         System.out.println("Please enter the desired difficulty");
         System.out.println("\t1. Easy (1-3)");
         System.out.println("\t2. Medium (4-6)");
@@ -28,7 +26,6 @@ public class Main {
             default:
                 System.out.println("Error, input is not recognized.");
         } // end switch
-        System.out.println(wordGame.getWord());
         wordGame.start();
     } // end main method
 } // end class
