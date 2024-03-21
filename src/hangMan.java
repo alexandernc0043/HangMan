@@ -1,4 +1,4 @@
-public class hangman {
+public class hangMan {
     public int strikes;
     // Credits to https://github.com/YungNewton for the HangMan Art
     String[] HANGMANPICS = {"""
@@ -51,7 +51,7 @@ public class hangman {
   / \\ |
       |
   ====="""};
-    public hangman(int strikes){
+    public hangMan(int strikes){
         this.strikes = strikes;
     }
     public int getStrikes(){
