@@ -9,4 +9,4 @@ Created on Intelij Community Edition
 ## Acknowledgements
 
 - [Hang Man Graphics](https://github.com/YungNewton) YungNewton on Github
-
+- [Words List](https://gist.github.com/deekayen/4148741) deekayen on Github
