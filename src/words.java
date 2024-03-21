@@ -4,6 +4,13 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class words {
+    // Colors
+    String RESET = "\u001B[0m";
+    String RED = "\u001B[31m";
+    String GREEN = "\u001B[32m";
+    String YELLOW = "\u001B[33m";
+    String BLUE = "\\u001B[31m";
+
     public String word;
     ArrayList<String> board = new ArrayList<>();
     boolean gameStatus = false;
@@ -101,11 +108,11 @@ public class words {
     }
     public void loseMessage() {
         strikes.display();
-        System.out.println("You have lost...\nHangman has been hung.");
+        System.out.println(RED + "You have lost..." + RESET + "\nHangman has been hung.\nThe Word Was: " + word);
     } // end method
     public void winMessage() {
         int guessRemaining = 6 - incorrectGuesses.size();
-        System.out.println("You won!!!\n\nHang Man has been saved!\nYou had: " + guessRemaining + " guesses remaining.");
+        System.out.println(GREEN + "You won!!!" + RESET + "\n\nHang Man has been saved!\nYou had: " + guessRemaining + " guesses remaining.");
     } // end method
     public void checkGameStatus() {
         if (!board.contains("___ ")) {

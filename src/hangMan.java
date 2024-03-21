@@ -1,6 +1,11 @@
 public class hangMan {
     public int strikes;
     // Credits to https://github.com/YungNewton for the HangMan Art
+    String RESET = "\u001B[0m";
+    String RED = "\u001B[31m";
+    String GREEN = "\u001B[32m";
+    String YELLOW = "\u001B[33m";
+    String BLUE = "\\u001B[31m";
     String[] HANGMANPICS = {"""
    +--+
    |  |
@@ -58,6 +63,6 @@ public class hangMan {
         return strikes;
     }
     public void display(){
-        System.out.println("\n\n" + HANGMANPICS[getStrikes()]);
+        System.out.println(RED + "\n" + HANGMANPICS[getStrikes()] + RESET);
     }
 }
