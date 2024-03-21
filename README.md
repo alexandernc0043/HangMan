@@ -29,6 +29,10 @@ Selecting a mode
 
 ![Selecting a mode](https://i.imgur.com/svW6MBi.png)
 
+Correct Guess
+
+![Correct Guess](https://i.imgur.com/IbQCcM4.png)
+
 Incorrect Guess
 
 ![Incorrect guess](https://i.imgur.com/eqo1plh.png)
