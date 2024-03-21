@@ -8,6 +8,7 @@ public class Main {
         System.out.println("\t2. Medium (4-6)");
         System.out.println("\t3. Hard (6+)");
         Scanner scnr = new Scanner(System.in);
+        System.out.print("> ");
         int choice = scnr.nextInt();
         // Default words constructor
         words wordGame = new words();
