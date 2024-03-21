@@ -1,17 +1,20 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
+        Scanner scnr = new Scanner(System.in);
+        int choice = scnr.nextInt();
+//        int amountGames = 0;
+        boolean amountGames = false;
         // Beginning Message
         System.out.println("Please enter the desired difficulty");
         System.out.println("\t1. Easy (1-3)");
         System.out.println("\t2. Medium (4-6)");
         System.out.println("\t3. Hard (6+)");
+        // Default words constructor
         words wordGame = new words();
         loop:
         while(true) {
-            Scanner scnr = new Scanner(System.in);
             System.out.print("> ");
-            int choice = scnr.nextInt();
             // Sets game to desired difficulty
             switch (choice) {
                 case (1):
