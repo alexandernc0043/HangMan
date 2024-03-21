@@ -26,6 +26,7 @@ public class Main {
             default:
                 System.out.println("Error, input is not recognized.");
         } // end switch
+//        System.out.println("Before start?");
         wordGame.start();
     } // end main method
 } // end class

@@ -36,3 +36,7 @@ Incorrect Guess
 Win Screen
 
 ![Win Screen](https://i.imgur.com/RTxnPfP.png)
+
+Lose Screen
+
+![Lose Screen](https://i.imgur.com/FXJTApC.png)
