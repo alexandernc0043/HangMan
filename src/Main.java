@@ -30,6 +30,5 @@ public class Main {
         } // end switch
         System.out.println(wordGame.getWord());
         wordGame.start();
-
     } // end main method
 } // end class
