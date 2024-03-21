@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 public class Words {
     public String word;
-    public String guessing ="";
+    ArrayList<String> board = new ArrayList<>();
     boolean gameStatus = false;
     hangman strikes = new hangman(0);
     Scanner scnr = new Scanner(System.in);
@@ -82,16 +82,14 @@ public class Words {
     public void updateBoard()
     {
         strikes.display();
+
     }
     public void start()
     {
         for(int i = 0; i < getWord().length(); i++){
-            guessing = guessing + "_";
-//            System.out.print("_");
-
-
+            board.add("___");
         } // end for
-        System.out.println(guessing);
+        System.out.println(board);
         strikes.display();
         loop:
         while(!gameStatus) {
@@ -99,6 +97,9 @@ public class Words {
             char guess = scnr.next().toLowerCase().charAt(0);
             if(word.indexOf(guess) != -1){
                 guesses.add(guess);
+                board.remove(word.indexOf(guess));
+                board.add(word.indexOf(guess), String.valueOf(guess));
+                System.out.println(board);
             }// end if
             else {
                 guesses.add(guess);
