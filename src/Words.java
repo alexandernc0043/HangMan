@@ -82,8 +82,19 @@ public class Words {
     public void updateBoard()
     {
         strikes.display();
-        System.out.println(board);
-        System.out.println("Incorrect Guesses:" + incorrectGuesses);
+
+        for(int i = 0; i < board.size(); i++){
+            System.out.print(board.get(i));
+        }
+        System.out.print("\n");
+
+
+        System.out.println("Incorrect Guesses:");
+        for(int i = 0; i < incorrectGuesses.size(); i++){
+            System.out.print(incorrectGuesses.get(i));
+            System.out.print(", ");
+        }
+        System.out.print("\n");
 
     }
     public void addStrike(hangman plr){
@@ -92,48 +103,67 @@ public class Words {
     }
     public void start()
     {
+        /*
+        initial board setup
+         */
         for(int i = 0; i < getWord().length(); i++){
             board.add("___ ");
         } // end for
-        System.out.println(board);
-        strikes.display();
+        updateBoard();
+
+//        strikes.display();
         loop:
-        while(!gameStatus && incorrectGuesses.size() != 6) {
+        while(!gameStatus) {
             System.out.println("Please enter your guess:");
             char guess = scnr.next().toLowerCase().charAt(0);
-            for(String i: board){
-                if(Objects.equals(i, "___ ")){
-                    gameStatus = false;
-                }
-                else {
-                    gameStatus = true;
-                    break loop;
-                    winMessage();
-                }
+            /*
+            This If statement checks if the guess is inside the random word selected by the program.
+             */
+            if(!(board.contains("___ ")))
+            {
+                gameStatus = true;
+                updateBoard();
+                winMessage();
+                break loop;
             }
+
+            /*
+            Checks if the guess is a part of the word and if it is it replaces the board to place the guess at the correct spot.
+             */
             if(word.indexOf(guess) != -1){
                 board.remove(word.indexOf(guess));
                 board.add(word.indexOf(guess), (" " + String.valueOf(guess).toUpperCase() + " "));
                 updateBoard();
             }// end if
-            else if(incorrectGuesses.size() == 6){
-                loseMessage();
-            }
-            else {
+
+            /*
+            Else statement for if the guess is not in the word, it adds to incorrect guesses and adds a strike to the player and updates the board.
+             */
+            else
+            {
                 incorrectGuesses.add(guess);
+                /*
+                This if, is for when the player has used up all there guesses and hangman is hung.
+                */
+                if(incorrectGuesses.size() == 6)
+                {
+                    loseMessage();
+                    break;
+                }
                 addStrike(strikes);
                 updateBoard();
-            }
-
-
+            } // end else
         } // end loop
     } // end method
 
-    private void loseMessage() {
-    }
+    public void loseMessage() {
+        System.out.println("You have lost...\nHangman has been hung.");
+    } // end method
 
-    private void winMessage() {
-    }
+    public void winMessage() {
+        int guessRemaining = 6 - incorrectGuesses.size();
+        System.out.println("You won!!!\n\nHang Man has been saved!\nYou had: " + guessRemaining + " guesses remaining.");
+    } // end method
 
 
 }
