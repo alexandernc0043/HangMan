@@ -23,14 +23,15 @@ public class words {
     Default constructor that sets difficulty to easy just encase code somehow breaks (failsafe)
      */
     public words() {
-        generateWord("easy");
+        selectDiffuclty();
+        generateWord(difficulty);
     } // end constructor
     /*
     Constructor that allows for difficulty param.
      */
-    public words(String difficulty) {
-        generateWord(difficulty);
-    } // end constructor
+//    public words(String difficulty) {
+//        generateWord(difficulty);
+//    } // end constructor
     /*
     Method generates a random word based on difficulty param and will loop through word list until a word meets the requirements
      */
@@ -156,7 +157,6 @@ public class words {
     Then it takes the input from the guess and sees if that character is the word and if it is it removes the appropriate underscore and places the letter in the spot where the underscore was
      */
     public void start() {
-        selectDiffuclty();
         /*
         initial board setup
          */
@@ -212,7 +212,7 @@ public class words {
             } // end else
         } // end loop
     } // end method
-    public String selectDiffuclty(){
+    public void selectDiffuclty(){
         System.out.println("Please enter the desired difficulty");
         System.out.println("\t1. Easy (1-3)");
         System.out.println("\t2. Medium (4-6)");
@@ -227,17 +227,20 @@ public class words {
                 case (1):
                     System.out.println("You have selected Easy mode, Begin!");
 //                    wordGame = new words("easy");
-                    return difficulty = "easy";
+                    difficulty = "easy";
+                    return;
 //                    break loop; // loop break for easy.
                 case (2):
                     System.out.println("You have selected Medium mode, Begin!");
 //                    wordGame = new words("medium");
-                    return difficulty = "medium";
+                    difficulty = "medium";
+                    return;
 //                    break loop; // loop break for medium.
                 case (3):
                     System.out.println("You have selected Hard mode, Begin!");
 //                    wordGame = new words("hard");
-                    return difficulty = "hard";
+                    difficulty = "hard";
+                    return;
 //                    break loop; // loop break for hard.
                 default:
                     // Will repeat input until valid case.
@@ -246,7 +249,7 @@ public class words {
                     choice = scnr.nextInt();
             } // end switch
         } // end loop
-        
+
 //        return choice;
     }
     public String getDifficulty(){
