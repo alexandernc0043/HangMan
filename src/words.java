@@ -156,6 +156,7 @@ public class words {
     Then it takes the input from the guess and sees if that character is the word and if it is it removes the appropriate underscore and places the letter in the spot where the underscore was
      */
     public void start() {
+        selectDiffuclty();
         /*
         initial board setup
          */
@@ -211,7 +212,43 @@ public class words {
             } // end else
         } // end loop
     } // end method
+    public String selectDiffuclty(){
+        System.out.println("Please enter the desired difficulty");
+        System.out.println("\t1. Easy (1-3)");
+        System.out.println("\t2. Medium (4-6)");
+        System.out.println("\t3. Hard (6+)");
+        System.out.print("> ");
+        int choice = scnr.nextInt();
 
+        loop:
+        while(true) {
+            System.out.print("> ");
+            switch (choice) {
+                case (1):
+                    System.out.println("You have selected Easy mode, Begin!");
+//                    wordGame = new words("easy");
+                    return difficulty = "easy";
+//                    break loop; // loop break for easy.
+                case (2):
+                    System.out.println("You have selected Medium mode, Begin!");
+//                    wordGame = new words("medium");
+                    return difficulty = "medium";
+//                    break loop; // loop break for medium.
+                case (3):
+                    System.out.println("You have selected Hard mode, Begin!");
+//                    wordGame = new words("hard");
+                    return difficulty = "hard";
+//                    break loop; // loop break for hard.
+                default:
+                    // Will repeat input until valid case.
+                    System.out.println("Error, input is not recognized. Try again.");
+                    System.out.print("> ");
+                    choice = scnr.nextInt();
+            } // end switch
+        } // end loop
+        
+//        return choice;
+    }
     public String getDifficulty(){
         return difficulty;
     }
