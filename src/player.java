@@ -1,9 +1,9 @@
 import java.util.Scanner;
 public class player {
     Scanner scnr = new Scanner(System.in);
-    private String name = "";
-    private int gamesWon;
-    private int gamesPlayed;
+    public String name = "";
+    public int gamesWon = 0;
+    public int gamesPlayed = 0;
 
     public String getName() {
         return name;
@@ -36,8 +36,6 @@ public class player {
 
     public player() {
         name = "";
-        gamesWon = 0;
-        gamesPlayed = 0;
 
     }
     public void displayPlayerStats(){
