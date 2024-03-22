@@ -1,4 +1,6 @@
+import java.util.Scanner;
 public class player {
+    Scanner scnr = new Scanner(System.in);
     private String name;
     private int gamesWon;
     private int gamesPlayed;
@@ -32,7 +34,14 @@ public class player {
         this.gamesPlayed = gamesPlayed;
     }
 
-    public void displayPlayerStats(player plr, words game){
-        System.out.println("Player: " + plr.getName() +"\nGames Won: " + getGamesWon() + "\nGames Played: " + getGamesPlayed());
+    public player() {
+    }
+    public void displayPlayerStats(){
+        System.out.println("Player: " + getName() +"\nGames Won: " + getGamesWon() + "\nGames Played: " + getGamesPlayed() + "\n\n\n");
+    }
+    public void gatherPlrInfo(){
+        System.out.println("What is your name?");
+        String name = scnr.nextLine();
+        setName(name);
     }
 }

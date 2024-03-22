@@ -5,34 +5,30 @@ public class Main {
         Scanner scnr = new Scanner(System.in);
         int amountGames;
         int choice;
+        player plr = new player();
+        plr.gatherPlrInfo();
         // Beginning Message
         // Default words constructor
-
-
-
         System.out.println("How many games would you like to play?\nEnter 0 for unlimited games.");
         System.out.print("> ");
         amountGames = scnr.nextInt();
+
+
+
         if(amountGames == 0){
             unlimitedGames = true;
         }
-        if(unlimitedGames = true)
+        if(unlimitedGames)
             while(true){
                 words wordGame = new words();
-                wordGame.start();
+                wordGame.start(plr);
             }
         else{
-            for(int i = 0; 9 < amountGames; i++){
+            for(int i = 1; i <= amountGames; i++){
                 words wordGame = new words();
-                wordGame.start();
+                wordGame.start(plr);
             }
         }
-
-
-
-        // Game starter
-//        words wordGame = new words();
-//        wordGame.start();
     } // end main method
 
 
