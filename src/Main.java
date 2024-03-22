@@ -40,19 +40,8 @@ public class Main {
         System.out.println("How many games would you like to play?\nEnter 0 for unlimited games.");
         System.out.print("> ");
         amountGames = scnr.nextInt();
-        loop:
-        while(true){
-            try {
-               amountGames = Integer.parseInt(amountGames);
-            } catch (NumberFormatException nfe) {
-                return false;
-            switch(amountGames){
-                case(0):
-                    unlimitedGames = true;
-                    break loop;
-                    case(Interger.parseInt())
-            }
-        }
+        if(unlimitedGames = true)
+            while(true)
 
 
 
