@@ -1,7 +1,8 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        boolean amountGames = false;
+        boolean unlimitedGames = false;
+        int amountGames;
         // Beginning Message
         System.out.println("Please enter the desired difficulty");
         System.out.println("\t1. Easy (1-3)");
@@ -36,6 +37,25 @@ public class Main {
                     choice = scnr.nextInt();
             } // end switch
         }
+        System.out.println("How many games would you like to play?\nEnter 0 for unlimited games.");
+        System.out.print("> ");
+        amountGames = scnr.nextInt();
+        loop:
+        while(true){
+            try {
+               amountGames = Integer.parseInt(amountGames);
+            } catch (NumberFormatException nfe) {
+                return false;
+            switch(amountGames){
+                case(0):
+                    unlimitedGames = true;
+                    break loop;
+                    case(Interger.parseInt())
+            }
+        }
+
+
+
         // Game starter
         wordGame.start();
     } // end main method
