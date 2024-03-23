@@ -24,7 +24,7 @@ public class words {
     Default constructor that sets difficulty to easy just encase code somehow breaks (failsafe)
      */
     public words() {
-        selectDiffuclty();
+        selectDifficulty();
         generateWord(difficulty);
     } // end constructor
     /*
@@ -204,11 +204,11 @@ public class words {
             } // end else
         } // end loop
     } // end method
-    public void selectDiffuclty(){
-        System.out.println("Please enter the desired difficulty");
-        System.out.println("\t1. Easy (1-3)");
+    public void selectDifficulty(){
+        System.out.println("Please enter the desired length");
+        System.out.println("\t1. Short (1-3)");
         System.out.println("\t2. Medium (4-6)");
-        System.out.println("\t3. Hard (6+)");
+        System.out.println("\t3. Long (6+)");
         System.out.print("> ");
         int choice = scnr.nextInt();
 
@@ -217,15 +217,15 @@ public class words {
             System.out.print("> ");
             switch (choice) {
                 case (1):
-                    System.out.println("You have selected Easy mode, Begin!");
+                    System.out.println("You have chosen a short word, Begin!");
                     difficulty = "easy";
                     return;
                 case (2):
-                    System.out.println("You have selected Medium mode, Begin!");
+                    System.out.println("You have selected a medium word, Begin!");
                     difficulty = "medium";
                     return;
                 case (3):
-                    System.out.println("You have selected Hard mode, Begin!");
+                    System.out.println("You have selected a long word, Begin!");
                     difficulty = "hard";
                     return;
                 default:
