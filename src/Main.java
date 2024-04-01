@@ -15,8 +15,8 @@ public class Main {
             amountGames = scnr.nextInt();
         } catch (Exception e) {
             System.out.println("Please enter a valid number!");
-            scnr.reset();
             System.out.print("> ");
+            scnr.nextLine();
             amountGames = scnr.nextInt();
         }
 
