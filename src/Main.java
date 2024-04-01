@@ -11,7 +11,15 @@ public class Main {
         // Default words constructor
         System.out.println("How many games would you like to play?\nEnter 0 for unlimited games.");
         System.out.print("> ");
-        amountGames = scnr.nextInt();
+        try {
+            amountGames = scnr.nextInt();
+        } catch (Exception e) {
+            System.out.println("Please enter a valid number!");
+            scnr.reset();
+            System.out.print("> ");
+            amountGames = scnr.nextInt();
+        }
+
         if(amountGames == 0){
             unlimitedGames = true;
         }
