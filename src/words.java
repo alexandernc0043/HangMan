@@ -237,7 +237,7 @@ public class words {
     public String getDifficulty() {
         return difficulty;
     } // end method
-    public char guess() {
+    public void guess() {
         loop:
         while (true) {
             try {
@@ -255,7 +255,6 @@ public class words {
                 System.out.println("Catch: Please enter a valid guess!:");
             } // end catch
         } // end loop
-        return guess;
     } // end method
 } // end class
 
