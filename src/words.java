@@ -241,7 +241,7 @@ public class words {
         loop:
         while (true) {
             try {
-                System.out.println("TRY: Please enter your guess:");
+                System.out.println("Please enter your guess:");
                 guessString = scnr.next().toLowerCase();
                 if (!guessString.matches("[a-zA-Z]")) {
                     throw new Exception();
@@ -252,7 +252,7 @@ public class words {
                 break loop;
             } // end try
             catch(Exception e) {
-                System.out.println("Catch: Please enter a valid guess!:");
+                System.out.println("Please enter a valid guess!:");
             } // end catch
         } // end loop
     } // end method
