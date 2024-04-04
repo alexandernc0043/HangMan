@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         boolean unlimitedGames = false;
@@ -7,39 +8,36 @@ public class Main {
         int choice;
         player plr = new player();
         plr.gatherPlrInfo();
-        // Beginning Message
-        // Default words constructor
+        // Determines how many games will be played.
         System.out.println("How many games would you like to play?\nEnter 0 for unlimited games.");
         System.out.print("> ");
         try {
             amountGames = scnr.nextInt();
-        } catch (Exception e) {
+        } // end try
+        catch (Exception e) {
             System.out.println("Please enter a valid number!");
             System.out.print("> ");
             scnr.nextLine();
             amountGames = scnr.nextInt();
-        }
-
-        if(amountGames == 0){
+        } // end catch
+        if (amountGames == 0) {
             unlimitedGames = true;
-        }
-        if(unlimitedGames)
-            while(true){
+        } // end if
+        if (unlimitedGames) while (true) {
+            words wordGame = new words();
+            wordGame.start(plr);
+            plr.gamesPlayed++;
+            plr.displayPlayerStats();
+        } // end loop
+        else {
+            for (int i = 1; i <= amountGames; i++) {
                 words wordGame = new words();
                 wordGame.start(plr);
                 plr.gamesPlayed++;
                 plr.displayPlayerStats();
-            }
-        else{
-            for(int i = 1; i <= amountGames; i++){
-                words wordGame = new words();
-                wordGame.start(plr);
-                plr.gamesPlayed++;
-                plr.displayPlayerStats();
-            }
-        }
+            } // end for
+        } // end else
     } // end main method
-
 
 
 } // end class

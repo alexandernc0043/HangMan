@@ -189,7 +189,7 @@ public class words {
         } // end loop
     } // end method
 
-    // the guess method where the player puts in their guess and makes sure its a valid character 
+    // the guess method where the player puts in their guess and makes sure its a valid character
     public void guess() {
         loop:
         while (true) {
