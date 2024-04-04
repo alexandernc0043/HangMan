@@ -5,7 +5,6 @@ public class Main {
         boolean unlimitedGames = false;
         Scanner scnr = new Scanner(System.in);
         int amountGames;
-        int choice;
         player plr = new player();
         plr.gatherPlrInfo();
         // Determines how many games will be played.
