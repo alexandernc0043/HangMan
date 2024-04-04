@@ -53,13 +53,14 @@ public class hangMan {
   / \\ |
       |
   ====="""};
+    // Constructor
     public hangMan(int strikes){
         this.strikes = strikes;
-    }
+    } // end constructor
     public int getStrikes(){
         return strikes;
-    }
+    } // end getter
     public void display(){
         System.out.println(RED + "\n" + HANGMANPICS[getStrikes()] + RESET);
-    }
-}
+    } // end method
+} // end class
