@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 public class player {
     Scanner scnr = new Scanner(System.in);
@@ -39,12 +41,27 @@ public class player {
         this.gamesPlayed = gamesPlayed;
     } // end constructor
 
+    public void importPlayer() {
+        try {
+            File myObj = new File("~/Documents/playerInformation.txt");
+            Scanner reader = new Scanner(myObj);
+            while (reader.hasNextLine()) {
+                String data = reader.nextLine();
+                System.out.println(data);
+            }
+        }
+        catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+        }
+
+    }
+
     // default constructor
     public player() {
         name = "";
 
     } // end constructor
-    
+
     // displays player stats after game
     public void displayPlayerStats() {
         System.out.println("\n\n\nPlayer: " + getName() + "\nGames Won: " + getGamesWon() + "\nGames Played: " + getGamesPlayed() + "\n\n\n");
