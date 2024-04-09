@@ -6,6 +6,30 @@ public class Main {
         Scanner scnr = new Scanner(System.in);
         int amountGames;
         player plr = new player();
+        loop:
+        while (true) {
+            try {
+
+
+                System.out.println("Would you like to import player stats?");
+                System.out.print("y/n > ");
+                String choice = scnr.nextLine().toLowerCase();
+                switch (choice) {
+                    case ("y"):
+                        plr.importPlayer();
+                        break loop;
+                    case ("n"):
+                        break loop;
+                    default:
+                        throw new IllegalArgumentException();
+                }
+            } catch (IllegalArgumentException e) {
+                System.out.println("Please enter valid input\n\n");
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
         plr.gatherPlrInfo();
         // Determines how many games will be played.
         System.out.println("How many games would you like to play?\nEnter 0 for unlimited games.");

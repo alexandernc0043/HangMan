@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
-
+import java.io.FileWriter;
 public class player {
     Scanner scnr = new Scanner(System.in);
     // Variables
@@ -41,9 +41,21 @@ public class player {
         this.gamesPlayed = gamesPlayed;
     } // end constructor
 
+    public void exportPlayer() {
+        try {
+            File myFile = new File("./playerInformation.txt");
+            Scanner reader = new Scanner(myFile);
+            if(myFile.canWrite()){
+                System.out.println("Player Stats Saved: " + myFile.getName() + ", " + myFile.getAbsolutePath());
+            }
+        }
+        catch(Exception e){
+            System.out.print(e.getMessage());
+        }
+    }
     public void importPlayer() {
         try {
-            File myObj = new File("~/Documents/playerInformation.txt");
+            File myObj = new File("./playerInformation.txt");
             Scanner reader = new Scanner(myObj);
             while (reader.hasNextLine()) {
                 String data = reader.nextLine();

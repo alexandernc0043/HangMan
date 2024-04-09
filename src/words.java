@@ -153,6 +153,7 @@ public class words {
             updateBoard();
             winMessage();
             plr.gamesWon++;
+            plr.exportPlayer();
         } // end if
     } // end check game status method.
 
@@ -235,6 +236,7 @@ public class words {
                 if (incorrectGuesses.size() == 6) {
                     addStrike(strikes);
                     loseMessage();
+                    plr.exportPlayer();
                     break;
                 } // end if
                 addStrike(strikes);
